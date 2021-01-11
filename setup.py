@@ -1,3 +1,5 @@
+# pyright: reportMissingTypeStubs=false
+# pyright: reportUnknownMemberType=false
 import setuptools
 
 with open("README.md", "r", encoding="utf-8") as fp:
