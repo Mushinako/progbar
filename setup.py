@@ -7,7 +7,7 @@ with open("README.md", "r", encoding="utf-8") as fp:
 
 setuptools.setup(
     name="progbar-mushinako",  # Replace with your own username
-    version="1.3",
+    version="1.4",
     author="Mushinako",
     author_email="ridoedee@gmail.com",
     description="Simple progress bar for personal use",
@@ -16,7 +16,7 @@ setuptools.setup(
     url="https://github.com/Mushinako/progbar",
     packages=setuptools.find_packages(),
     package_data={
-        "stubs": ["*.pyi", "py.typed"],
+        "progbar": ["*.pyi", "py.typed"],
     },
     include_package_data=True,
     classifiers=[
