@@ -45,16 +45,30 @@ def clear_print_clearable(
     clear_print(value.translate(_CHAR_TRANS), sep=sep, end="", file=file, flush=flush)
 
 
-def progress_str(current: int, total: int) -> str:
+def progress_full(current: int, total: int) -> str:
     """
-    Generate progress string:  1/10
+    Full progress indicator:  80.000% [ 8/10]
 
     Args:
-        current (int): Amount finished
-        total   (int): Total amount
+        current (int): ID of current element
+        total   (int): Number of total elements
 
     Returns:
-        (str): Progress string:  1/10
+        {str}: Progress string:  80.000% [ 8/10]
+    """
+    return f"{progress_percent(current, total)} [{progress_str(current, total)}]"
+
+
+def progress_str(current: int, total: int) -> str:
+    """
+    Generate progress string:  8/10
+
+    Args:
+        current (int): ID of current element
+        total   (int): Number of total elements
+
+    Returns:
+        (str): Progress string:  8/10
     """
     count_str = str(total)
     return f"{current:>{len(count_str)}}/{count_str}"
@@ -62,14 +76,14 @@ def progress_str(current: int, total: int) -> str:
 
 def progress_percent(current: int, total: int) -> str:
     """
-    Generate progress percentage:  80.785%
+    Generate progress percentage:  80.000%
 
     Args:
-        current (int): Amount finished
-        total   (int): Total amount
+        current (int): ID of current element
+        total   (int): Number of total elements
 
     Returns:
-        {str}: Progress percent string:  80.785%
+        {str}: Progress percent string:  80.000%
     """
     return f"{current/total:8.3%}"
 
@@ -99,7 +113,7 @@ def shrink_str(shrink: str, *, prefix: str = "", postfix: str = "") -> str:
         shrinked += char
     if shrinked != shrink:
         shrink = shrinked[:-3] + "..."
-    return f"{prefix} {shrink} {postfix}"
+    return f"{prefix} {shrink} {postfix}"[:max_len]
 
 
 _CHAR_TRANS = str.maketrans(
