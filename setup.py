@@ -6,7 +6,7 @@ with open("README.md", "r", encoding="utf-8") as fp:
     long_description = fp.read()
 
 setuptools.setup(
-    name="progbar-mushinako",  # Replace with your own username
+    name="progbar-mushinako",
     version="2021.05",
     author="Mushinako",
     author_email="ridoedee@gmail.com",
