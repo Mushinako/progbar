@@ -113,7 +113,7 @@ def shrink_str(shrink: str, *, prefix: str = "", postfix: str = "") -> str:
         shrinked += char
     if shrinked != shrink:
         shrink = shrinked[:-3] + "..."
-    return f"{prefix} {shrink} {postfix}"[:max_len]
+    return f"{prefix} {shrink} {postfix}"
 
 
 _CHAR_TRANS = str.maketrans(

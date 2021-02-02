@@ -7,7 +7,7 @@ with open("README.md", "r", encoding="utf-8") as fp:
 
 setuptools.setup(
     name="progbar-mushinako",
-    version="2021.05",
+    version="2021.06",
     author="Mushinako",
     author_email="ridoedee@gmail.com",
     description="Simple progress bar for personal use",
